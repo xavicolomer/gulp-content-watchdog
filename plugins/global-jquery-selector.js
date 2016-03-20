@@ -19,8 +19,8 @@ var gutil = require('gulp-util');
 
 function test(text, path, lineNumber) {
     var matches = 0;
-    var re = /\$\(\'([a-z\-\_\.\+ \'\#0-9]+)\'?\)/gi; 
-    
+    var re = /\$\((?!window|document|.+currentTarget|.+target|\'body\')[\'\`]?(\.?[a-z \.#\{\}0-9\$]+)/gi; 
+
     while ((m = re.exec(text)) !== null) {
         if (lineNumber) {
             path += ':' + lineNumber;

@@ -21,8 +21,8 @@ var gutil = require('gulp-util');
 /** Look for Regular Expression matches */
 function test(text, path, lineNumber) {
     var matches = 0;
-    var re = /(?![require])\$[a-z\.\[\]0-9]*\(\'([a-z\-\_\.\+ \'\#0-9]+)\'?\)/gi; 
-    
+    var re = /(?![require])\$[\$a-z\.\[\]0-9]*\([\'\`]\.([a-z\-\_\.\+ \'0-9]+)[\'\`]?\)/gi; 
+
     while ((m = re.exec(text)) !== null) {
         if (lineNumber) {
             path += ':' + lineNumber;

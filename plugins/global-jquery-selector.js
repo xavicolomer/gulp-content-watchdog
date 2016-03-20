@@ -19,17 +19,18 @@ var gutil = require('gulp-util');
 
 function test(text, path, lineNumber) {
     var matches = 0;
-    var re = /\$\((?!window|document|.+currentTarget|.+target|\'body\')[\'\`]?(\.?[a-z \.#\{\}0-9\$]+)/gi; 
-
+    var re = /\$\((?!this|window|document|.+currentTarget|.+target|\'body\')[\'\`]?(\.?[a-z \.#\{\}0-9\$]+)/gi; 
+    var _path = path;
+    
     while ((m = re.exec(text)) !== null) {
         if (lineNumber) {
-            path += ':' + lineNumber;
+            _path += ':' + (lineNumber + 1);
         }
         if (m.index === re.lastIndex) {
             re.lastIndex++;
         }
 
-        gutil.log('[Global JQuery Selector]', gutil.colors.magenta(path), m[1]);
+        gutil.log('[Global JQuery Selector]', gutil.colors.magenta(_path), m[1]);
         matches++;
     }
 

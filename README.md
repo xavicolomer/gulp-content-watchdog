@@ -9,7 +9,7 @@ npm install https://github.com/xavicolomer/gulp-content-watchdog.git --save-dev
 
 ### How to use
 
-This example will apply to plugins to all the js files on a given directory, anb will display the affected line too. (This is useful because 'CMD + Click' on the console will open the default editor on the selected line)
+This example will apply the listed plugins to all the js files on a given directory, and will display the affected line too. (This is useful because 'CMD + Click' on the console will open the default editor on the selected line)
 
 Gulpfile.js
 ```

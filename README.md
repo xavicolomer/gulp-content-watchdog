@@ -1,8 +1,6 @@
 # Gulp content watchdog #0.1.0
 
-*This is an experiment, probably some of this logic could be implemented using linting rules.*
-
-This is a gulp plugin that allows test the content of different files to ensure guidelines.
+This is a gulp plugin that allows testing the content of different files to ensure guidelines.
 
 ### Installation
 ```
